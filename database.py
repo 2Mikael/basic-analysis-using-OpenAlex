@@ -3,28 +3,28 @@ import mariadb
 connection_parameters = {
     "user": "root", 
     "password": "password",
-    "database": "nlp_db",
+    "database": "openalex_database",
     "host": "localhost"
 }
 
-tables = ["nlp1", "nlp2", "nlp3"]
+tables = ["dataset1", "dataset2", "dataset3"]
 
 """
 Requirements:
-- MariaDB installed and running (as a service)
-- Database "nlp_db" and tables mentioned above must exist
+- MariaDB installed and running (as a service in the background)
+- Database "openalex_database" and tables "dataset1", "dataset2", and "dataset3" must exist
 
-Run these in MariaDB to create database and tables:
-- CREATE DATABASE nlp_db;
-- USE nlp_db;
-- CREATE TABLE nlp1 (
+Setup commands (you can use MariaDB(MySQL) client terminal):
+- CREATE DATABASE openalex_database;
+- USE openalex_database;
+- CREATE TABLE dataset1 (
     title VARCHAR(2000) NOT NULL,
     authors VARCHAR(2000) NOT NULL,
     abstract TEXT NOT NULL
 );
 
 Notes:
-- Repeat CREATE TABLE for nlp2 and nlp3
+- Repeat CREATE TABLE for dataset2 and dataset3
 - To empty a table, use "TRUNCATE TABLE table_name;"
 - To destroy a table/database, use "DROP TABLE/DATABASE table_or_database_name;"
 """
