@@ -11,16 +11,16 @@ page = 1
 
 # Concept-id "C140608501" represents review articles
 filters = {
-    "nlp1": "filter=has_abstract:true",
-    "nlp2": "filter=has_abstract:true,concept.id:C140608501",
-    "nlp3": "filter=has_abstract:true,from_publication_date:2018-10-01"
+    "dataset1": "filter=has_abstract:true",
+    "dataset2": "filter=has_abstract:true,concept.id:C140608501",
+    "dataset3": "filter=has_abstract:true,from_publication_date:2018-10-01"
 }
 
 # Instructions suggested collecting 500 entries for first 2 datasets and 1000 for the 3rd, not sure if necessary.
 data_counts_in_hundreds = {
-    "nlp1": 5,
-    "nlp2": 5,
-    "nlp3": 10
+    "dataset1": 5,
+    "dataset2": 5,
+    "dataset3": 10
 }
 
 def read_data(argument_string, count_in_hundreds) -> list[dict]:
@@ -61,7 +61,7 @@ def read_data(argument_string, count_in_hundreds) -> list[dict]:
         results.extend(parsed_objects)
     return results
 
-for dataset in ["nlp1", "nlp2", "nlp3"]:
+for dataset in ["dataset1", "dataset2", "dataset3"]:
     # Get filtered works based on dataset
     filter = filters[dataset]
     arguments = "&".join([search, sort, filter, select_fields, page_base])
