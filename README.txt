@@ -18,5 +18,6 @@ Files:
 Usage:
 - Download and start MariaDB.
 - Setup database and tables, see instructions in the "database.py" file.
+- Install requirements (pip install -r requirements.txt).
 - Run data_reader.
 - Run analysis.
